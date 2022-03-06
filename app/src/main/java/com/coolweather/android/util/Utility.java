@@ -34,10 +34,10 @@ public class Utility {
                     province.setProvinceCode(provinceJSONObject.getInt("id"));
                     province.save();
                 }
+                return true;
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            return true;
         }
         return false;
     }
@@ -51,10 +51,10 @@ public class Utility {
             try {
                 JSONArray allCities = new JSONArray(response);
                 for (int i = 0; i < allCities.length(); i++) {
-                    JSONObject cityJSONObject = allCities.getJSONObject(i);
+                    JSONObject cityObject = allCities.getJSONObject(i);
                     City city = new City();
-                    city.setCityName(cityJSONObject.getString("name"));
-                    city.setCityCode(cityJSONObject.getInt("id"));
+                    city.setCityName(cityObject.getString("name"));
+                    city.setCityCode(cityObject.getInt("id"));
                     city.setProvinceId(provinceId);
                     city.save();
                 }
@@ -82,11 +82,10 @@ public class Utility {
                     county.setCityId(cityId);
                     county.save();
                 }
-
+                return true;
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            return true;
         }
         return false;
     }

@@ -130,7 +130,7 @@ public class WeatherActivity extends AppCompatActivity {
     public void showWeatherInfo(Weather weather) {
         String cityName = weather.basic.cityName;
         String updateTime = weather.basic.update.updateTime.split(" ")[1];
-        String degree = weather.now.more.info;
+        String degree = weather.now.temperature + "℃";
         String weatherInfo = weather.now.more.info;
         titleCity.setText(cityName);
         titleUpdateTime.setText(updateTime);
@@ -148,7 +148,7 @@ public class WeatherActivity extends AppCompatActivity {
             dateText.setText(forecast.date);
             infoText.setText(forecast.more.info);
             maxText.setText(forecast.temperature.max);
-            maxText.setText(forecast.temperature.min);
+            minText.setText(forecast.temperature.min);
             forecastLayout.addView(view);
         }
         if (weather.aqi != null) {
