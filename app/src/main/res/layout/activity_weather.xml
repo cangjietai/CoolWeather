@@ -12,6 +12,11 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
+   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+       android:id="@+id/swipe_refresh"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
     <ScrollView
         android:id="@+id/weather_layout"
         android:layout_width="match_parent"
@@ -38,5 +43,7 @@
         </LinearLayout>
 
     </ScrollView>
+
+   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>
